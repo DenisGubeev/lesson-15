@@ -1,15 +1,6 @@
 <?php
-try {
-    $host = 'localhost';
-	$dbname = 'CSV_DB';
-	$dbuser = 'root';
-	$dbpassword = '';
-    $pdo = new PDO("mysql:host=localhost;dbname=$dbname;charset=utf8", $dbuser, $dbpassword);
-}
-catch (PDOException $e) {
-//    die('Подключение не удалось: ' . $e->getMessage());
-    die('Подключение не удалось: ');
-}
+require_once 'core.php';
+
 $table = $_GET['students'];
 $types = ['TINYINT', 'SMALLINT', 'MEDIUMINT', 'INT', 'BIGINT', 'FLOAT', 'DOUBLE', 'TIMESTAMP', 'VARCHAR'];
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && !empty($_GET)) {
