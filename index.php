@@ -1,5 +1,7 @@
 <?php
 
+require_once 'core.php';
+
 $sql = "SHOW TABLES FROM $dbname";
 $statement = $pdo->prepare($sql);
 $statement->execute();
